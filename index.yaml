@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  mlaide:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-04-30T11:37:49.417253+02:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.1.5
+    - condition: minio.enabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.10.25
+    - condition: keycloak.enabled
+      name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 18.4.0
+    description: A Helm chart to install ML Aide on Kubernetes
+    digest: ab2bd2c6caba39216e5863e9bc733cc4b7719eb8be3d3fc5d60dee70619a16c2
+    name: mlaide
+    type: application
+    urls:
+    - https://helm.mlaide.com/mlaide-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-04-30T11:37:49.40328+02:00"
