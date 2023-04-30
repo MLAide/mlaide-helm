@@ -289,3 +289,23 @@ keycloak:
       value: auth
     - name: KEYCLOAK_FRONTEND_URL
       value: https://login.k8s-demo.mlaide.com/auth
+
+# -- Google Cloud Platform specific configuration. Use this only if you are 
+# using Google Kubernetes Engine (GKE).
+googleCloudPlatform:
+  # -- Enable automatic TLS certificate management. With this option enabled
+  # Google Cloud will automatically create TLS certificates.
+  enableManagedCertificate: false
+  # -- The name of the managed certificate to be created for the webserver.
+  # The same name must be listed in 
+  # `webserver.ingress.annotations."networking.gke.io/managed-certificates"`.
+  webserverCertificateName: mlaide-webserver-cert
+  # -- The name of the managed certificate to be created for the UI.
+  # The same name must be listed in 
+  # `ui.ingress.annotations."networking.gke.io/managed-certificates"`.
+  uiCertificateName: mlaide-ui-cert
+  # -- The name of the managed certificate to be created for the built-in Keycloak.
+  # The same name must be listed in 
+  # `keycloak.ingress.annotations."networking.gke.io/managed-certificates"`.
+  # This property is only required if you are using the built-in Keycloak installation.
+  keycloakCertificateName: mlaide-keycloak-cert

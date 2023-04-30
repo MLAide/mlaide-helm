@@ -1,0 +1,9 @@
+{{- if .Values.googleCloudPlatform.enableManagedCertificate }}
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: {{ .Values.googleCloudPlatform.uiCertificateName }}
+spec:
+  domains:
+  - {{ .Values.ui.ingress.domain }}
+{{- end }}
